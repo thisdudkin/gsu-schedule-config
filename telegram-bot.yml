@@ -1,0 +1,24 @@
+telegram:
+  bot:
+    username: ${BOT_USERNAME}
+    token:    ${BOT_TOKEN}
+
+api-server:
+  uris:
+    faculty-uri:    http://localhost:2020/api/faculties
+    specialty-uri:  http://localhost:2020/api/specialties
+    group-uri:      http://localhost:2020/api/groups
+    schedule-uri:   http://localhost:2020/api/schedule
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+
+api-server:
+  uris:
+    faculty-uri:    ${FACULTY_URI}
+    specialty-uri:  ${SPECIALTY_URI}
+    group-uri:      ${GROUP_URI}
+    schedule-uri:   ${SCHEDULE_URI}
